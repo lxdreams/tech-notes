@@ -1,10 +1,12 @@
 import { defineConfig } from 'vitepress'
+import { sidebar as sidebarConfig } from './sidebar'
+import {nav as navConfig} from './nav'
 import mdItCustomAttrs  from 'markdown-it-custom-attrs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Tech Notes",
-  lang: 'zh',
+  lang: 'zh-CN',
   srcDir: './docs',
   description: "A VitePress Site",
   markdown:{
@@ -18,53 +20,18 @@ export default defineConfig({
   head: [
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" }],
     ["script", { src: "https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js" }],
-    ['link', { rel: 'icon', href: '/images/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/images/favicon.ico' }],
+    ['meta', { property: 'og:locale', content: 'zh' }],
   ],
   rewrites: {
   },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: '首页', link: '/' },
-      { text: 'Java', link: '/java/thread', activeMatch: '/java/' },
-      { text: 'Mysql', link: '/mysql/', activeMatch: '/mysql/' },
-      { text: '示例', link: '/example/markdown-examples', activeMatch: '/example/' }
-    ],
+    nav: navConfig,
 
     logo: '/images/favicon.png',
 
-    sidebar: {
-      '/java/':  [
-        {
-          text: 'Java',
-          collapsed: false,
-          items: [
-            { text: '多线程', link: '/java/thread' },
-          ]
-        }
-      ],
-      '/mysql/':  [
-        {
-          text: 'Mysql',
-          collapsed: false,
-          items: [
-            { text: 'Mysql索引', link: '/mysql/' },
-            { text: 'Mysql优化', link: '/mysql/optimize' },
-            { text: 'Explain', link: '/mysql/explain' },
-          ]
-        }
-      ],
-      '/example/': [
-        {
-          text: 'Examples',
-          items: [
-            { text: 'Markdown Examples', link: '/example/markdown-examples' },
-            { text: 'Runtime API Examples', link: '/example/api-examples' }
-          ]
-        }
-      ]
-      
-    },
+    sidebar: sidebarConfig,
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
@@ -87,7 +54,6 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
-
         locales: {
           zh: {
             translations: {

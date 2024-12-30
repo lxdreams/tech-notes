@@ -1,12 +1,12 @@
 # Markdown Extension Examples
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+VitePress 带有内置的 Markdown 扩展。
 
-## Syntax Highlighting
+## 代码块中的语法高亮
 
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
+VitePress 使用 Shiki 在 Markdown 代码块中使用彩色文本实现语法高亮。Shiki 支持多种编程语言。需要做的就是将有效的语言别名附加到代码块的开头：
 
-**Input**
+**输入**
 
 ````md
 ```js{4}
@@ -20,7 +20,7 @@ export default {
 ```
 ````
 
-**Output**
+**输出**
 
 ```js{4}
 export default {
@@ -32,11 +32,11 @@ export default {
 }
 ```
 
-## Custom Containers
+## 自定义容器
 
-**Input**
+**输入**
 
-```md
+````md
 ::: info
 This is an info box.
 :::
@@ -49,16 +49,18 @@ This is a tip.
 This is a warning.
 :::
 
-::: danger
+::: danger STOP
 This is a dangerous warning.
 :::
 
-::: details
-This is a details block.
-:::
+::: details 点我查看代码
+```js
+console.log('Hello, VitePress!')
 ```
+:::
+````
 
-**Output**
+**输出**
 
 ::: info
 This is an info box.
@@ -72,12 +74,14 @@ This is a tip.
 This is a warning.
 :::
 
-::: danger
+::: danger STOP
 This is a dangerous warning.
 :::
 
-::: details
-This is a details block.
+::: details 点我查看代码
+```js
+console.log('Hello, VitePress!')
+```
 :::
 
 ## More
