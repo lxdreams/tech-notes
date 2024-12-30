@@ -7,7 +7,7 @@ import mdItCustomAttrs  from 'markdown-it-custom-attrs'
 export default defineConfig({
   title: "Tech Notes",
   lang: 'zh-CN',
-  base: "/vitePress-project/",
+  base: "/tech-notes/",
   srcDir: './docs',
   description: "A VitePress Site",
   markdown:{
@@ -43,7 +43,7 @@ export default defineConfig({
     sidebarMenuLabel:"菜单",
 
     outline: {
-      level: [2, 6],
+      level: [2, 3],
       label:"导航"
     },
 
