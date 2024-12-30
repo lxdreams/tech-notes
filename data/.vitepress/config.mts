@@ -7,6 +7,7 @@ import mdItCustomAttrs  from 'markdown-it-custom-attrs'
 export default defineConfig({
   title: "Tech Notes",
   lang: 'zh-CN',
+  base: '.',
   srcDir: './docs',
   description: "A VitePress Site",
   markdown:{
