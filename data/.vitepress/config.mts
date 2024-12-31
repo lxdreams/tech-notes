@@ -30,7 +30,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: navConfig,
 
-    logo: '/images/favicon.png',
+    logo: '/favicon.png',
 
     sidebar: sidebarConfig,
 
